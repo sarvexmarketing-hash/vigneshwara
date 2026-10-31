@@ -43,7 +43,7 @@ export const CategoryStores: React.FC<CategoryStoresProps> = () => {
     {
       href: "/#products",
       title: "View All Items",
-      image: "/images/products/real_coke.jpg",
+      image: "/images/products/user_coke_bottle.jpg",
       tag: "All Banner Brands",
       isHighlight: true,
     },

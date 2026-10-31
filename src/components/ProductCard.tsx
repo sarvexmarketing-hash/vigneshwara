@@ -40,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
           onError={() => {
             setImgSrc("/images/products/drinks_montage.jpg");
           }}
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
         />
 
         {/* Brand Tag Top Left */}

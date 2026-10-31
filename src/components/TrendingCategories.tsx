@@ -187,7 +187,7 @@ export const TrendingCategories: React.FC<TrendingCategoriesProps> = ({
                 }`}
               >
                 {/* Packshot Image Container */}
-                <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-gray-50/70 mb-2 flex items-center justify-center p-1.5 group-hover:scale-105 transition-transform duration-200">
+                <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-white mb-2 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-200 border border-gray-100">
                   <Image
                     src={cat.image}
                     alt={cat.title}
