@@ -39,7 +39,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
       title: "Soda & Other Beverages",
       desc: "Club soda, flavored mixers, and specialty beverages.",
       action: "Explore Soda & Mixers",
-      image: "/images/products/soda_kinley.jpg",
+      image: "/images/products/user_kinley_soda.jpg",
       brands: "Kinley Soda • Bisleri Club Soda",
     },
   ];

@@ -285,7 +285,7 @@ export const productsData: Product[] = [
     category: "cool-drinks",
     categoryLabel: "Cool Drinks",
     packageSizes: ["250ml Soda Bottle", "1 Litre Club Soda", "3 Litres Bulk Case"],
-    image: "/images/products/soda_kinley.jpg",
+    image: "/images/products/user_kinley_soda.jpg",
     description: "Extra fizzy soda. Essential for function catering and beverage mixing.",
     availability: "In Stock",
     priceNote: "Wholesale Crate Rate",
@@ -497,7 +497,7 @@ export const trendingCategoryTiles: TrendingCategoryTile[] = [
     title: "Kinley Soda",
     brand: "Kinley",
     badge: "Extra Fizz",
-    image: "/images/products/soda_kinley.jpg",
+    image: "/images/products/user_kinley_soda.jpg",
     description: "Extra fizzy club soda bottles and crates for functions, catering and mixing.",
   },
 ];
