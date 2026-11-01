@@ -29,9 +29,12 @@ export const QuantitySegregationBar: React.FC<QuantitySegregationBarProps> = ({
               <span className="text-[10px] font-bold text-red-600 bg-red-100/80 px-1.5 py-0.5 rounded-full">
                 Bottle Volumes
               </span>
+              <span className="text-[10px] font-black text-amber-800 bg-amber-100 border border-amber-300 px-1.5 py-0.5 rounded-full">
+                Min. 5 Crates MOQ
+              </span>
             </h3>
             <p className="text-[10px] sm:text-[11px] text-gray-600">
-              Filter wholesale supplies by standard pack volume: 250ml, 1 Liter & 3 Liters
+              Filter wholesale supplies by volume: 250ml, 1 Liter & 3 Liters • Minimum 5 crates per order
             </p>
           </div>
         </div>

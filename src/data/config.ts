@@ -21,7 +21,7 @@ export const siteConfig: BusinessConfig = {
     hours: "8:00 AM - 8:30 PM",
     note: "Sundays: Wholesale orders by prior booking",
   },
-  announcement: "All types of Cool Drinks & Water Bottles Available at Wholesale Prices in Warangal — Contact: 9676373388",
+  announcement: "All types of Cool Drinks & Water Bottles at Wholesale Prices in Warangal — Minimum Order: 5 Crates — Contact: 9676373388",
 };
 
 export const config = {

@@ -20,13 +20,13 @@ export const QuoteCartDrawer: React.FC = () => {
     let orderList = items
       .map(
         (item, index) =>
-          `${index + 1}. ${item.product.name} (${item.selectedSize}) - Quantity: ${item.quantity} units/crates`
+          `${index + 1}. ${item.product.name} (${item.selectedSize}) - Quantity: ${item.quantity} Crates (Min. 5 Crates met)`
       )
       .join("\n");
 
     const header = shopName ? `Business/Shop: ${shopName}` : "Wholesale Commercial Buyer";
 
-    const fullMessage = `Hello ${siteConfig.name},\nI would like to place a wholesale order:\n\n${header}\nOrder Requisition:\n${orderList}\n\nPlease share batch availability, wholesale crate rates, and delivery schedule.`;
+    const fullMessage = `Hello ${siteConfig.name},\nI would like to place a wholesale order:\n\n${header}\nOrder Requisition (Minimum 5 Crates per Item):\n${orderList}\n\nTotal: ${totalCount} Crates\n\nPlease share batch availability, wholesale crate rates, and delivery schedule.`;
 
     const url = buildWhatsAppUrl(fullMessage);
     window.open(url, "_blank");
@@ -46,7 +46,7 @@ export const QuoteCartDrawer: React.FC = () => {
           <div className="flex items-center gap-2">
             <ShoppingCart className="w-5 h-5 text-red-600" />
             <h3 className="text-base font-bold text-gray-900">
-              Wholesale Order Cart ({totalCount} items)
+              Wholesale Order Cart ({totalCount} Crates)
             </h3>
           </div>
           <button
@@ -59,6 +59,16 @@ export const QuoteCartDrawer: React.FC = () => {
 
         {/* Drawer Content */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
+          {/* Wholesale Minimum Order Policy Banner */}
+          <div className="bg-amber-50 border border-amber-200 text-amber-950 rounded-xl p-2.5 text-xs flex items-center gap-2">
+            <span className="font-black bg-amber-600 text-white text-[9px] px-1.5 py-0.5 rounded tracking-wide uppercase">
+              MOQ
+            </span>
+            <span className="text-[11px] leading-tight font-medium">
+              <strong>Minimum 5 crates</strong> must be ordered per product for wholesale delivery.
+            </span>
+          </div>
+
           {items.length === 0 ? (
             <div className="py-16 text-center space-y-3">
               <div className="w-16 h-16 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mx-auto">
@@ -102,30 +112,41 @@ export const QuoteCartDrawer: React.FC = () => {
                       {item.product.priceNote}
                     </span>
 
-                    {/* Quantity Selector */}
+                    {/* Quantity Selector with 5 Crates Minimum */}
                     <div className="flex items-center gap-2 mt-2">
-                      <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
+                      <div className="flex items-center border border-gray-300 rounded-md overflow-hidden bg-white shadow-2xs">
                         <button
-                          onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                          className="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs"
+                          onClick={() => updateQuantity(item.product.id, Math.max(5, item.quantity - 1))}
+                          disabled={item.quantity <= 5}
+                          className={`px-2 py-1 text-xs transition-colors ${
+                            item.quantity <= 5
+                              ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                              : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                          }`}
+                          title={item.quantity <= 5 ? "Minimum order is 5 crates" : "Decrease quantity"}
                         >
                           <Minus className="w-3 h-3" />
                         </button>
-                        <span className="px-2.5 text-xs font-bold text-gray-800">
-                          {item.quantity}
+                        <span className="px-2.5 text-xs font-black text-gray-900 whitespace-nowrap">
+                          {item.quantity} Crates
                         </span>
                         <button
                           onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                          className="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs"
+                          className="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs"
+                          title="Increase crates"
                         >
                           <Plus className="w-3 h-3" />
                         </button>
                       </div>
 
+                      <span className="text-[10px] text-gray-400 font-bold">
+                        (Min. 5)
+                      </span>
+
                       <button
                         onClick={() => removeFromCart(item.product.id)}
-                        className="text-gray-400 hover:text-red-600 p-1"
-                        title="Remove"
+                        className="text-gray-400 hover:text-red-600 p-1 ml-auto"
+                        title="Remove Item"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>

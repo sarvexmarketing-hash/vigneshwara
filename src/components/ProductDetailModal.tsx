@@ -6,7 +6,7 @@ import { Product } from "@/types";
 import { siteConfig } from "@/data/config";
 import { buildWhatsAppUrl, getProductEnquiryMessage } from "@/lib/whatsapp";
 import { useCart } from "@/context/CartContext";
-import { X, MessageCircle, Phone, Tag, ShoppingCart, Check } from "lucide-react";
+import { X, MessageCircle, Phone, Tag, ShoppingCart, Check, Plus, Minus } from "lucide-react";
 
 interface ProductDetailModalProps {
   product: Product | null;
@@ -18,12 +18,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onClose,
 }) => {
   const [selectedSize, setSelectedSize] = useState<string>("");
+  const [orderQty, setOrderQty] = useState<number>(5);
   const [added, setAdded] = useState<boolean>(false);
   const { addToCart } = useCart();
 
   useEffect(() => {
     if (product && product.packageSizes.length > 0) {
       setSelectedSize(product.packageSizes[0]);
+      setOrderQty(5);
     }
   }, [product]);
 
@@ -45,11 +47,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   const currentSize = selectedSize || product.packageSizes[0] || "Standard Pack";
   const whatsappUrl = buildWhatsAppUrl(
-    getProductEnquiryMessage(product.name, currentSize)
+    `Hello ${siteConfig.name}, I want to enquire about ${product.name} (${currentSize}) - Wholesale Order Quantity: ${orderQty} Crates (Min. 5 Crates MOQ). Please confirm batch availability and crate pricing for Warangal.`
   );
 
   const handleAddToCart = () => {
-    addToCart(product, currentSize);
+    addToCart(product, currentSize, orderQty);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
@@ -148,6 +150,45 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
             </div>
 
+            {/* Quantity Stepper (Minimum 5 Crates) */}
+            <div className="mt-4 pt-3 border-t border-brand-border">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-brand-charcoal/80 block">
+                    Order Quantity (Crates):
+                  </span>
+                  <span className="text-[10px] text-red-600 font-bold block mt-0.5">
+                    * Minimum 5 crates must be ordered
+                  </span>
+                </div>
+
+                <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden bg-white shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setOrderQty((q) => Math.max(5, q - 1))}
+                    disabled={orderQty <= 5}
+                    className={`px-3 py-1.5 text-xs font-bold transition-colors ${
+                      orderQty <= 5
+                        ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                        : "bg-gray-50 hover:bg-gray-200 text-gray-800"
+                    }`}
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
+                  <span className="px-3 text-xs font-black text-gray-900 whitespace-nowrap">
+                    {orderQty} Crates
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setOrderQty((q) => q + 1)}
+                    className="px-3 py-1.5 bg-gray-50 hover:bg-gray-200 text-gray-800 text-xs font-bold"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
             {product.popularFor && product.popularFor.length > 0 && (
               <div className="mt-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 block mb-1">
@@ -173,12 +214,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {added ? (
                 <>
                   <Check className="w-4 h-4" />
-                  <span>Added {currentSize} to Quote!</span>
+                  <span>Added {orderQty} Crates to Quote!</span>
                 </>
               ) : (
                 <>
                   <ShoppingCart className="w-4 h-4" />
-                  <span>Add {currentSize} to Quote Cart</span>
+                  <span>Add {orderQty} Crates to Quote Cart</span>
                 </>
               )}
             </button>
@@ -190,7 +231,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold py-2.5 px-4 rounded-xl shadow-xs text-sm transition-all"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
-              <span>Enquire {currentSize} on WhatsApp</span>
+              <span>Enquire {orderQty} Crates on WhatsApp</span>
             </a>
 
             <a

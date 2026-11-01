@@ -5,7 +5,7 @@ import { Product, CartItem } from "@/types";
 
 interface CartContextType {
   items: CartItem[];
-  addToCart: (product: Product, size?: string) => void;
+  addToCart: (product: Product, size?: string, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -47,17 +47,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const addToCart = (product: Product, size?: string) => {
+  const addToCart = (product: Product, size?: string, quantity: number = 5) => {
     const selectedSize = size || product.packageSizes[0] || "Standard Pack";
+    const initialQty = Math.max(5, quantity);
     const existing = items.find((i) => i.product.id === product.id);
     if (existing) {
       saveItems(
         items.map((i) =>
-          i.product.id === product.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.product.id === product.id ? { ...i, quantity: i.quantity + initialQty } : i
         )
       );
     } else {
-      saveItems([...items, { product, quantity: 1, selectedSize }]);
+      saveItems([...items, { product, quantity: initialQty, selectedSize }]);
     }
     setIsCartOpen(true);
   };
@@ -71,8 +72,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       removeFromCart(productId);
       return;
     }
+    // Enforce minimum 5 crates wholesale order requirement
+    const enforcedQty = Math.max(5, quantity);
     saveItems(
-      items.map((i) => (i.product.id === productId ? { ...i, quantity } : i))
+      items.map((i) => (i.product.id === productId ? { ...i, quantity: enforcedQty } : i))
     );
   };
 

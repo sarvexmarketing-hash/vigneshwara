@@ -108,8 +108,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
                 Direct Crate Pricing
               </span>
             </div>
-            <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.5 rounded">
-              Verified Stock
+            <span className="text-[9px] font-extrabold text-amber-800 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded tracking-tight">
+              Min. 5 Crates
             </span>
           </div>
 
@@ -136,12 +136,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
               {added ? (
                 <>
                   <Check className="w-3.5 h-3.5" />
-                  <span>ADDED</span>
+                  <span>Added (5)!</span>
                 </>
               ) : (
                 <>
-                  <Plus className="w-3.5 h-3.5" />
-                  <span>QUOTE</span>
+                  <ShoppingCart className="w-3.5 h-3.5" />
+                  <span>+ Quote (5)</span>
                 </>
               )}
             </button>
