@@ -246,7 +246,7 @@ export const MoglixHeader: React.FC<MoglixHeaderProps> = ({
                 <span>Call {siteConfig.displayPhone}</span>
               </a>
               <p className="text-[10px] text-center text-gray-500">
-                Official Beverage Wholesale Distributor Visakhapatnam
+                Official Beverage Wholesale Distributor Chennaraopet, Warangal
               </p>
             </div>
           </div>

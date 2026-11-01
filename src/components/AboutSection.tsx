@@ -57,7 +57,7 @@ export const AboutSection: React.FC = () => {
             </h2>
 
             <p className="text-base text-brand-charcoal/80 leading-relaxed mb-4">
-              {siteConfig.name} is a dedicated wholesale business based in Visakhapatnam, Andhra Pradesh. We cater to grocery stores, supermarkets, restaurants, hotels, caterers, and event organizers who require steady access to cool drinks, carbonated soft drinks, and packaged drinking water bottles.
+              {siteConfig.name} is a dedicated wholesale beverage distributor based in Chennaraopet, Warangal District, Telangana. We cater to grocery stores, supermarkets, restaurants, hotels, caterers, and event organizers who require steady wholesale access to cool drinks, carbonated soft drinks, and packaged drinking water bottles.
             </p>
 
             <p className="text-base text-brand-charcoal/80 leading-relaxed mb-6">

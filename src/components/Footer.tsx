@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-sm text-white/80 leading-relaxed pt-1">
-              Wholesale soft drinks, packaged drinking water, and beverage supply for retail stores, supermarkets, restaurants, and caterers across Visakhapatnam and Andhra Pradesh.
+              Wholesale cool drinks, packaged drinking water bottles, and beverage supply for retail stores, supermarkets, restaurants, and caterers across Chennaraopet, Warangal District, and Telangana.
             </p>
 
             <div className="pt-2">

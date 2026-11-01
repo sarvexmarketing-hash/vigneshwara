@@ -18,7 +18,7 @@ export const PromoHeroBanner: React.FC = () => {
       discountSub: "WHOLESALE",
       bgGradient: "from-[#032e22] via-[#064e3b] to-[#047857]",
       accentColor: "bg-red-600",
-      image: "/images/banner.jpg",
+      image: "/images/products/user_sprite_bottle.jpg",
     },
     {
       id: 2,

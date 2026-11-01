@@ -176,7 +176,7 @@ export const HeroSection: React.FC = () => {
                       Verified AP Location
                     </span>
                     <span className="text-[11px] text-brand-charcoal/70">
-                      Visakhapatnam, AP
+                      Warangal, Telangana
                     </span>
                   </div>
                 </div>

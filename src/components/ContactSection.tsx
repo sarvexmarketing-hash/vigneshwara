@@ -209,14 +209,14 @@ export const ContactSection: React.FC = () => {
                 <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-brand-border bg-brand-subtle">
                   <iframe
                     title="Sri Vigneshwara Agencies Location Map"
-                    src="https://maps.google.com/maps?q=Madhavadhara,+Visakhapatnam,+Andhra+Pradesh+530007&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Chennaraopet,+Warangal,+Telangana+506332&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     className="w-full h-full border-0"
                     loading="lazy"
                   />
                 </div>
                 <div className="mt-2 text-right">
                   <a
-                    href="https://maps.google.com/?q=Kalinganagar,+Madhavadhara,+Visakhapatnam,+Andhra+Pradesh+530007"
+                    href="https://maps.google.com/?q=Chennaraopet,+Warangal,+Telangana+506332"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs font-semibold text-brand-emerald hover:underline inline-flex items-center gap-1"

@@ -10,18 +10,18 @@ export const siteConfig: BusinessConfig = {
   address: {
     line1: "D.No. 2-10/1, Opp. High School",
     area: "Patha Muggumpuram, Chennaraopet",
-    city: "Chennaraopet",
-    state: "Andhra Pradesh / Telangana",
-    pincode: "506343",
-    plusCode: "Chennaraopet Centre",
-    fullAddress: "D.No. 2-10/1, Opp. High School, Patha Muggumpuram, Chennaraopet",
+    city: "Warangal",
+    state: "Telangana",
+    pincode: "506332",
+    plusCode: "Chennaraopet, Warangal",
+    fullAddress: "D.No. 2-10/1, Opp. High School, Patha Muggumpuram, Chennaraopet, Warangal, Telangana - 506332",
   },
   businessHours: {
     days: "Monday - Saturday",
     hours: "8:00 AM - 8:30 PM",
     note: "Sundays: Wholesale orders by prior booking",
   },
-  announcement: "All types of Cool Drinks & Water Bottles Available at Wholesale Prices — Contact: 9676373388",
+  announcement: "All types of Cool Drinks & Water Bottles Available at Wholesale Prices in Warangal — Contact: 9676373388",
 };
 
 export const config = {

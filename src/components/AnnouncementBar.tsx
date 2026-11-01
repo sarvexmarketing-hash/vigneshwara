@@ -23,7 +23,7 @@ export const AnnouncementBar: React.FC = () => {
             <span>{siteConfig.displayPhone}</span>
           </a>
           <span className="text-white/30">•</span>
-          <span className="text-white/80">Andhra Pradesh</span>
+          <span className="text-white/80">Warangal, Telangana</span>
         </div>
       </div>
     </div>

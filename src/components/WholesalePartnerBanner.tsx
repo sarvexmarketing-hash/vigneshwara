@@ -30,7 +30,7 @@ export const WholesalePartnerBanner: React.FC = () => {
           </div>
 
           <h3 className="text-base sm:text-xl font-bold text-gray-900 leading-snug">
-            Your Dedicated Cool Drinks & Water Bottles Supply Partner in Visakhapatnam
+            Your Dedicated Cool Drinks & Water Bottles Supply Partner in Warangal
           </h3>
 
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
@@ -42,7 +42,7 @@ export const WholesalePartnerBanner: React.FC = () => {
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> GST Invoicing Available
             </span>
             <span className="flex items-center gap-1">
-              <Truck className="w-3.5 h-3.5 text-blue-600" /> Daily Madhavadhara Route
+              <Truck className="w-3.5 h-3.5 text-blue-600" /> Daily Chennaraopet & Warangal Route
             </span>
           </div>
         </div>

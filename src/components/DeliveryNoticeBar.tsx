@@ -13,10 +13,10 @@ export const DeliveryNoticeBar: React.FC<DeliveryNoticeBarProps> = ({ onOpenLoca
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         <div className="space-y-0.5">
           <h3 className="text-xs sm:text-sm font-bold text-white tracking-wide">
-            24 hrs delivery is coming soon in your location 530007
+            Wholesale delivery available across Chennaraopet & Warangal (506332)
           </h3>
           <p className="text-[11px] text-gray-400">
-            Meanwhile, enjoy regular delivery!
+            Daily priority routes for shops, restaurants & caterers.
           </p>
         </div>
 

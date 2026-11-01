@@ -10,17 +10,17 @@ interface LocationModalProps {
 }
 
 export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose }) => {
-  const [pincode, setPincode] = useState("530007");
+  const [pincode, setPincode] = useState("506332");
   const [checked, setChecked] = useState(false);
 
   if (!isOpen) return null;
 
   const supportedZones = [
-    { name: "Madhavadhara & Kalinganagar", pin: "530007", time: "Within 2 Hours" },
-    { name: "Dwaraka Nagar & Asilmetta", pin: "530016", time: "Daily Morning Route" },
-    { name: "MVP Colony & Seethammadhara", pin: "530017", time: "Daily Afternoon Route" },
-    { name: "Gajuwaka & Industrial Zone", pin: "530026", time: "Daily Wholesale Dispatch" },
-    { name: "Madhurawada & Rushikonda", pin: "530048", time: "Scheduled Delivery" },
+    { name: "Chennaraopet & Muggumpuram", pin: "506332", time: "Local Immediate Dispatch" },
+    { name: "Narsampet Town & Market", pin: "506132", time: "Daily Morning Route" },
+    { name: "Warangal City & Hanamkonda", pin: "506001", time: "Daily Wholesale Route" },
+    { name: "Kazipet & Suburbs", pin: "506003", time: "Daily Afternoon Dispatch" },
+    { name: "Parkal & Surrounding Mandal", pin: "506164", time: "Scheduled Delivery" },
   ];
 
   return (
@@ -36,7 +36,7 @@ export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose })
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-red-600" />
             <h3 className="text-base font-bold text-gray-900">
-              Select Delivery Location
+              Select Delivery Location (Warangal District)
             </h3>
           </div>
           <button onClick={onClose} className="p-1 rounded-full text-gray-400 hover:text-gray-700">
@@ -46,7 +46,7 @@ export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose })
 
         <div>
           <label className="block text-xs font-bold text-gray-700 mb-1">
-            Enter 6-Digit Visakhapatnam Pincode
+            Enter 6-Digit Warangal / Chennaraopet Pincode
           </label>
           <div className="flex gap-2">
             <input
@@ -57,7 +57,7 @@ export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose })
                 setChecked(false);
               }}
               className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500 font-mono"
-              placeholder="e.g. 530007"
+              placeholder="e.g. 506332"
               maxLength={6}
             />
             <button

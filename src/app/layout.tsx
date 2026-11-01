@@ -10,18 +10,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — Wholesale Beverage & Packaged Drinking Water Distribution`,
+  title: `${siteConfig.name} — Wholesale Cool Drinks & Packaged Water Distribution, Warangal`,
   description:
-    `Official website for ${siteConfig.name}, Visakhapatnam, Andhra Pradesh. Wholesale distributor of soft drinks, packaged drinking water (Kinley, Bisleri), fruit juices, and soda for retail shops, restaurants, and catering.`,
+    `Official website for ${siteConfig.name}, Chennaraopet, Warangal, Telangana. Wholesale distributor of cool drinks (Thums Up, Sprite, Coke, Mountain Dew, Maaza) and packaged drinking water (Bisleri, Kinley, Aquafina, Bailley) for retail shops, restaurants, and catering.`,
   keywords: [
     siteConfig.name,
-    "Vigneshwara Agencies",
-    "Beverage Distribution Visakhapatnam",
-    "Drinking water wholesale Andhra Pradesh",
-    "Thums Up wholesale distributor",
-    "Bisleri water bottles supply",
-    "Soft drinks supplier Madhavadhara",
-    "Beverage wholesale Andhra Pradesh",
+    "Sri Vigneshwara Agencies Warangal",
+    "Cool Drinks Wholesale Warangal",
+    "Drinking water wholesale Telangana",
+    "Thums Up wholesale distributor Chennaraopet",
+    "Bisleri water bottles supply Warangal",
+    "Soft drinks supplier Chennaraopet",
+    "Beverage wholesale Telangana",
   ],
   authors: [{ name: siteConfig.name }],
   metadataBase: new URL("https://sri-vigneshwara-agencies.vercel.app"),
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${siteConfig.name} — Wholesale Beverage Distribution`,
+    title: `${siteConfig.name} — Wholesale Cool Drinks & Water Bottles, Warangal`,
     description:
-      "Reliable wholesale supply of soft drinks, packaged drinking water, and beverages in Visakhapatnam, Andhra Pradesh.",
+      "Reliable wholesale supply of cool drinks, packaged drinking water bottles, and beverages in Chennaraopet, Warangal, Telangana.",
     url: "https://sri-vigneshwara-agencies.vercel.app",
     siteName: siteConfig.name,
     locale: "en_IN",

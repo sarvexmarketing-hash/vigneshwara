@@ -25,7 +25,7 @@ export const TeluguBanner: React.FC = () => {
             Contact us for quality beverages and drinking water supplies for your business.
           </h2>
           <p className="text-sm sm:text-base text-brand-offwhite/90 leading-relaxed">
-            Inquire for wholesale pricing, live batch availability, crate minimums, and delivery schedules across Visakhapatnam.
+            Inquire for wholesale pricing, live batch availability, crate minimums, and delivery schedules across Chennaraopet & Warangal.
           </p>
         </div>
 

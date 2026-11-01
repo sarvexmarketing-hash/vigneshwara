@@ -25,7 +25,7 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       title: "Local Business Support",
-      desc: "Focused on Andhra Pradesh businesses with dedicated attention to regular delivery schedules and event orders.",
+      desc: "Focused on Warangal and Telangana businesses with dedicated attention to regular delivery schedules and event orders.",
     },
   ];
 

@@ -6,7 +6,7 @@ export const JsonLd: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "WholesaleStore",
     "name": siteConfig.name,
-    "description": "Wholesale soft drinks, packaged drinking water, fruit juices, and beverage distribution in Visakhapatnam, Andhra Pradesh.",
+    "description": "Wholesale cool drinks, packaged drinking water, and beverage distribution in Chennaraopet, Warangal District, Telangana.",
     "telephone": siteConfig.phone,
     "address": {
       "@type": "PostalAddress",
